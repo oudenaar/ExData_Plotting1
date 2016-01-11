@@ -19,7 +19,7 @@ plot(pp1$DateTimeObj,pp1$Global_active_power, type="l", ylab="Global Active Powe
 
 plot(pp1$DateTimeObj,pp1$Voltage, type="l", xlab="DateTime", ylab="Voltage")
 
-plot(pp1$DateTimeObj,pp1$Sub_metering_1, type="l", xlab="Dates", ylab="Global Active Power (kilowatts)")
+plot(pp1$DateTimeObj,pp1$Sub_metering_1, type="l", xlab=" ", ylab="Global Active Power (kilowatts)")
 lines(pp1$DateTimeObj,pp1$Sub_metering_2, type="l", col="red")
 lines(pp1$DateTimeObj,pp1$Sub_metering_3, type="l", col="blue")
 legend("topright", col=c("black","red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"), pch="-", cex=1)
