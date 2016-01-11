@@ -9,11 +9,9 @@ pp1 <- subset(pp, Date >= as.Date("2007-02-01") & Date <= as.Date("2007-02-02"))
 
 #Plot to PNG
 png(width = 480, height = 480, units = "px", file = "plot3.png")
-with(pp1, { 
-        plot(ylab="Global Active Power (kilowatts)", xaxt = "n", type="n")
-        lines(Sub_metering_2, type="l", ylab="Global Active Power (kilowatts)", col="black")
-        lines(Sub_metering_2, type="l", ylab="Global Active Power (kilowatts)", col="blue")
-        lines(Sub_metering_3, type="l", ylab="Global Active Power (kilowatts)", col="red")
-})
+plot(pp1$Sub_metering_1, type="l", xlab="Dates", ylab="Global Active Power (kilowatts)", xaxt = "n")
+lines(pp1$Sub_metering_2, type="l",  xaxt = "n", col="red")
+lines(pp1$Sub_metering_3, type="l", xaxt = "n", col="blue")
+legend("topright", col=c("black","red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"), pch="-", cex=1)
 
 dev.off()
